@@ -77,5 +77,8 @@ Database writes are blocked during tests by default. Enable **Allow database wri
 
 == Changelog ==
 
-= 0.1.0 =
-* Initial release with `wp/test` action handling, Tools page, log filtering, and `wp wp-test` command.
+= 1.0.0 =
+* Initial release.
+
+== ToDo ==
+* add support for named arguments

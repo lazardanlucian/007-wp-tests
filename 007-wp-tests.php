@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: WP Tests
- * Description: Provides a lightweight per-user harness for running ad-hoc function assertions via the wp/test action hook.
- * Version: 0.1.0
+ * Description: A plugin to facilitate testing functions via the wp/test action.
+ * Version: 1.0.0
  * Author: Dan
  * License: GPLv2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -106,11 +106,8 @@ class WP_Tests_Plugin
 
     public function enqueue_admin_assets(): void
     {
-        $file_path = plugin_dir_path(__FILE__) . 'wp-tests.css';
-        $url = plugin_dir_url(__FILE__) . 'wp-tests.css';
-        $ver = file_exists($file_path) ? (string) filemtime($file_path) : '0.1.0';
-
-        wp_enqueue_style('wp-tests-admin', $url, [], $ver);
+        $url = plugin_dir_url(__FILE__) . '007-wp-tests.css';
+        wp_enqueue_style('wp-tests-admin', $url, [], '1.0.0');
     }
 
     public function handle_tools_save(): void

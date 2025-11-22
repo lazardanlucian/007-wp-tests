@@ -1,0 +1,27 @@
+{
+  "name": "WordPress + MySQL + Mailpit",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "wordpress",
+  "runServices": [
+    "db",
+    "wordpress",
+    "mailpit"
+  ],
+  "workspaceFolder": "/workspace",
+  "forwardPorts": [
+    80,
+    8025,
+  ],
+  "portsAttributes": {
+    "80": {
+      "label": "WordPress"
+    },
+    "8025": {
+      "label": "Mailpit UI"
+    }
+  },
+  "containerEnv": {
+    "WORDPRESS_PLUGIN_SLUG": "${localWorkspaceFolderBasename}",
+    "WORDPRESS_URL": "https://${localEnv:CODESPACE_NAME}-80.${localEnv:GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}",
+  }
+}

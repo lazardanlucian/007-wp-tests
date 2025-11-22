@@ -30,6 +30,35 @@ do_action(
 );
 ```
 
+works with named parameters
+```php
+function sample_plugin_function($name, $surname) {
+    return "Hello $name $surname!";
+}
+
+do_action('wp/test', [
+    'function' => 'sample_plugin_function',
+    'args'     => ['name' => 'John', 'surname' => 'Doe'],
+    'assert'   => 'Hello John Doe!'
+]);
+```
+
+no specific support for classes, objects, but wrappers can be used
+```php
+namespace Sample;
+// Class Definition...
+function sample_test_myClass(){
+    $myObject = new myClass();
+    return($myObject->do("Hello"));
+}
+
+do_action("wp/test", [
+    "function" => 'Sample\sample_test_myClass',
+    "args"     => [],
+    "assert"   => "Hello"
+]);
+```
+
 Notes:
 - Calls are ignored unless the current user has enabled tests on the Tools page (CLI is always allowed).
 - When the callable is not found, has missing keys, or throws, the result is recorded as a failure with the error message.
@@ -79,6 +108,3 @@ Database writes are blocked during tests by default. Enable **Allow database wri
 
 = 1.0.0 =
 * Initial release.
-
-== ToDo ==
-* add support for named arguments

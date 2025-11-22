@@ -163,12 +163,9 @@ class WP_Tests_Plugin
             <h1 class="wp-tests-title">
                 <?php esc_html_e('WP Tests', 'wp-tests'); ?>
                 <?php
-                $github_icon = '<span class="wp-tests-github-icon">&#x1F517;</span>';
-
                 printf(
-                    '<a class="wp-tests-github-link" href="%s" target="_blank" rel="noopener noreferrer">%s<span class="wp-tests-github-text">%s</span></a>',
+                    '<a class="wp-tests-github-link" href="%s" target="_blank" rel="noopener noreferrer"><span class="wp-tests-github-text">%s</span><span class="wp-tests-github-icon">&#x1F517;</span></a>',
                     esc_url('https://github.com/lazardanlucian/007-wp-tests'),
-                    $github_icon,
                     esc_html__('Help available in github', 'wp-tests')
                 );
                 ?>

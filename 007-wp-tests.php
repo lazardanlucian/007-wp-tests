@@ -160,7 +160,19 @@ class WP_Tests_Plugin
         $allow_db_actions = (bool) get_option(self::OPTION_ALLOW_DB_ACTIONS, false);
         ?>
         <div class="wrap wp-tests-wrap">
-            <h1 class="wp-tests-title"><?php esc_html_e('WP Tests', 'wp-tests'); ?></h1>
+            <h1 class="wp-tests-title">
+                <?php esc_html_e('WP Tests', 'wp-tests'); ?>
+                <?php
+                $github_icon = '<span class="wp-tests-github-icon">&#x1F517;</span>';
+
+                printf(
+                    '<a class="wp-tests-github-link" href="%s" target="_blank" rel="noopener noreferrer">%s<span class="wp-tests-github-text">%s</span></a>',
+                    esc_url('https://github.com/lazardanlucian/007-wp-tests'),
+                    $github_icon,
+                    esc_html__('Help available in github', 'wp-tests')
+                );
+                ?>
+            </h1>
             <div class="wp-tests-card">
                 <form id="wp-tests-form" method="post" action="">
                     <?php wp_nonce_field('wp_tests_save_tools', 'wp_tests_tools_nonce'); ?>

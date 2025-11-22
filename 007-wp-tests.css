@@ -128,3 +128,26 @@
 .wp-tests-switch input:checked + .wp-tests-slider:before {
     transform: translateX(26px);
 }
+
+/* Small inline GitHub link beside the title */
+.wp-tests-title .wp-tests-github-link {
+    font-size: 0.75em;
+    margin-left: 8px;
+    font-weight: 400;
+    color: #2271b1;
+    text-decoration: none;
+}
+.wp-tests-title .wp-tests-github-link:hover {
+    color: #1a629c;
+}
+
+.wp-tests-title .wp-tests-github-icon {
+     font-size: 16px;
+     vertical-align: middle;
+     margin-right: 6px;
+     line-height: 1;
+}
+.wp-tests-title .wp-tests-github-text {
+    font-size: 0.85em;
+    vertical-align: middle;
+}

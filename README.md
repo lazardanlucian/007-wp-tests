@@ -72,7 +72,8 @@ Database writes are blocked during tests by default. Enable **Allow database wri
 
 == Screenshots ==
 
-1. Tools page with enable/allow-db-write toggles and test results table.
+1. Tools page with toggles and test results table.
+1. Sample code in plugin/theme.
 
 == Changelog ==
 
